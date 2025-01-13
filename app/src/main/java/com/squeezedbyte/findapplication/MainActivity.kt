@@ -148,7 +148,7 @@ class MainActivity : ComponentActivity() {
                 }else {
                     nomePacchetto.nomePacchetto
                 }
-                Text(text = testo, modifier = Modifier.padding(top = 10.dp).clickable { clickapri(nomePacchetto.nomePacchetto) })
+                Text(text = testo,color = Color.Black, modifier = Modifier.padding(top = 10.dp, start = 5.dp).clickable { clickapri(nomePacchetto.nomePacchetto) })
             }
         }
     }
