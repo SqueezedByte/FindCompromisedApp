@@ -22,6 +22,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.github.kittinunf.fuel.httpGet
 import com.github.kittinunf.result.Result
 import com.squeezedbyte.findapplication.classiVarie.ClassiDiComodo.ListaApp
@@ -53,7 +54,7 @@ class MainActivity : ComponentActivity() {
                 return@launch
             }
             listaPacchetti?.forEach { appInstallata ->
-                if (listaAppLaide.any { it.nomeApp == appInstallata.nomeApp || it.nomePacchetto == appInstallata.nomePacchetto}) {
+                if (listaAppLaide.any { it.nomePacchetto == appInstallata.nomePacchetto}) {
                     listaPacchettiLaidi.add(appInstallata)
                 }
             }
@@ -148,7 +149,19 @@ class MainActivity : ComponentActivity() {
                 }else {
                     nomePacchetto.nomePacchetto
                 }
-                Text(text = testo,color = Color.Black, modifier = Modifier.padding(top = 10.dp, start = 5.dp).clickable { clickapri(nomePacchetto.nomePacchetto) })
+                Column {
+                    Text(
+                        text = testo,
+                        color = Color.Black,
+                        modifier = Modifier.padding(top = 10.dp, start = 5.dp)
+                            .clickable { clickapri(nomePacchetto.nomePacchetto) })
+                    Text(
+                        text = nomePacchetto.nomePacchetto,
+                        color = Color.Black,
+                        fontSize = 14.sp,
+                        modifier = Modifier.padding(start = 5.dp).background(Color.Yellow)
+                            .clickable { clickapri(nomePacchetto.nomePacchetto) })
+                }
             }
         }
     }
