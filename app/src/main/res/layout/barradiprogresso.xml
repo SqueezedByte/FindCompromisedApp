@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:orientation="horizontal"
+                                                   android:padding="13dp"
+                                                   android:background="@color/white"
+                                                   android:layout_centerHorizontal="true"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/testoPB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressBar"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar"
+            android:layout_marginTop="8dp" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:indeterminate="true"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            app:indicatorSize="90dp"
+            app:indicatorColor="@color/black"
+            app:trackColor="@color/teal_200"
+            android:id="@+id/progressBar" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="4dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
